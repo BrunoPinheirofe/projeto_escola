@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alunoForm.addEventListener('submit', function(event) {
             event.preventDefault();
             
-            // Get form values
             const nome = document.getElementById('nome').value.trim();
             const dataNascimento = document.getElementById('data-nascimento').value;
             const cpf = document.getElementById('cpf').value.trim();
@@ -13,12 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const telefone = document.getElementById('telefone').value.trim();
             const email = document.getElementById('email').value.trim();
             
-            // Validate form
             if (!validateForm(nome, dataNascimento, cpf, endereco)) {
                 return false;
             }
             
-            // Create student object
             const aluno = {
                 id: generateId(),
                 nome,
@@ -30,17 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 dataRegistro: new Date().toISOString()
             };
             
-            // Save student to localStorage
+            
             saveAluno(aluno);
             
-            // Reset form
-            alunoForm.reset();
             
-            // Show success message
+            alunoForm.reset();
+        
             alert('Aluno cadastrado com sucesso!');
         });
         
-        // Add CPF formatting
         const cpfInput = document.getElementById('cpf');
         if (cpfInput) {
             cpfInput.addEventListener('input', function() {
@@ -60,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Add phone formatting
+    
         const telefoneInput = document.getElementById('telefone');
         if (telefoneInput) {
             telefoneInput.addEventListener('input', function() {
@@ -97,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
-        // Validate CPF format (xxx.xxx.xxx-xx)
         if (!cpf.match(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)) {
             alert('CPF inválido. Utilize o formato XXX.XXX.XXX-XX');
             return false;
@@ -111,19 +105,4 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
     
-    function saveAluno(aluno) {
-        // Get existing students or initialize empty array
-        const alunos = JSON.parse(localStorage.getItem('alunos') || '[]');
-        
-        // Add new student
-        alunos.push(aluno);
-        
-        // Save back to localStorage
-        localStorage.setItem('alunos', JSON.stringify(alunos));
-    }
-    
-    function generateId() {
-        // Simple ID generation
-        return Date.now().toString(36) + Math.random().toString(36).substr(2);
-    }
 });

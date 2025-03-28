@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const paisForm = document.getElementById('pais-form');
     const alunoSelect = document.getElementById('aluno-relacionado');
     
-    // Populate students dropdown if it exists
     if (alunoSelect) {
         populateAlunosDropdown();
     }
@@ -10,8 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (paisForm) {
         paisForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            
-            // Get form values
+
             const nome = document.getElementById('nome').value.trim();
             const cpf = document.getElementById('cpf').value.trim();
             const telefone = document.getElementById('telefone').value.trim();
@@ -20,12 +18,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const alunoId = document.getElementById('aluno-relacionado').value;
             const parentesco = document.getElementById('parentesco').value;
             
-            // Validate form
             if (!validateForm(nome, cpf, telefone, email, endereco, alunoId)) {
                 return false;
             }
             
-            // Create parent object
             const pai = {
                 id: generateId(),
                 nome,
@@ -38,17 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 dataRegistro: new Date().toISOString()
             };
             
-            // Save parent to localStorage
             savePai(pai);
             
-            // Reset form
-            paisForm.reset();
-            
-            // Show success message
             alert('Pai/Responsável cadastrado com sucesso!');
         });
         
-        // Add CPF formatting
+        
         const cpfInput = document.getElementById('cpf');
         if (cpfInput) {
             cpfInput.addEventListener('input', function() {
@@ -68,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Add phone formatting
         const telefoneInput = document.getElementById('telefone');
         if (telefoneInput) {
             telefoneInput.addEventListener('input', function() {
@@ -90,15 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function populateAlunosDropdown() {
-        // Get existing students from localStorage
         const alunos = JSON.parse(localStorage.getItem('alunos') || '[]');
         
-        // Clear existing options except the placeholder
         while (alunoSelect.options.length > 1) {
             alunoSelect.remove(1);
         }
         
-        // Add student options
         alunos.forEach(aluno => {
             const option = document.createElement('option');
             option.value = aluno.id;
@@ -118,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
-        // Validate CPF format (xxx.xxx.xxx-xx)
         if (!cpf.match(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)) {
             alert('CPF inválido. Utilize o formato XXX.XXX.XXX-XX');
             return false;
@@ -134,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
-        // Validate email format
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             alert('Email inválido');
             return false;
@@ -154,18 +139,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function savePai(pai) {
-        // Get existing parents or initialize empty array
         const pais = JSON.parse(localStorage.getItem('pais') || '[]');
         
-        // Add new parent
         pais.push(pai);
         
-        // Save back to localStorage
         localStorage.setItem('pais', JSON.stringify(pais));
     }
     
     function generateId() {
-        // Simple ID generation
         return Date.now().toString(36) + Math.random().toString(36).substr(2);
     }
 });
