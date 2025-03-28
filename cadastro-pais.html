@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar - Cadastro de Pais</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro-aluno.html">Alunos</a></li>
+                <li><a href="cadastro-pais.html">Pais</a></li>
+                <li><a href="cadastro-disciplina.html">Disciplinas</a></li>
+                <li><a href="turma.html">Turmas</a></li>
+                <li><a href="notas.html">Notas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Cadastro de Pais/Responsáveis</h1>
+        <form id="pais-form">
+            <div class="form-group">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="aluno-relacionado">Aluno Relacionado:</label>
+                <select id="aluno-relacionado" name="aluno-relacionado" required>
+                    <option value="">Selecione um aluno</option>
+                    <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="parentesco">Parentesco:</label>
+                <select id="parentesco" name="parentesco" required>
+                    <option value="pai">Pai</option>
+                    <option value="mae">Mãe</option>
+                    <option value="avó">Avó</option>
+                    <option value="avô">Avô</option>
+                    <option value="tio">Tio</option>
+                    <option value="tia">Tia</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/pais.js"></script>
+</body>
+</html>

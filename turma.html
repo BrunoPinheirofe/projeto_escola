@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar - Gerenciamento de Turmas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro-aluno.html">Alunos</a></li>
+                <li><a href="cadastro-pais.html">Pais</a></li>
+                <li><a href="cadastro-disciplina.html">Disciplinas</a></li>
+                <li><a href="turma.html">Turmas</a></li>
+                <li><a href="notas.html">Notas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Gerenciamento de Turmas</h1>
+        <form id="turma-form">
+            <div class="form-group">
+                <label for="nome">Nome da Turma:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="ano-letivo">Ano Letivo:</label>
+                <input type="number" id="ano-letivo" name="ano-letivo" min="2022" max="2030" value="2023" required>
+            </div>
+            <div class="form-group">
+                <label for="turno">Turno:</label>
+                <select id="turno" name="turno" required>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                    <option value="noturno">Noturno</option>
+                    <option value="integral">Integral</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="serie">Série:</label>
+                <select id="serie" name="serie" required>
+                    <option value="1">1º Ano</option>
+                    <option value="2">2º Ano</option>
+                    <option value="3">3º Ano</option>
+                    <option value="4">4º Ano</option>
+                    <option value="5">5º Ano</option>
+                    <option value="6">6º Ano</option>
+                    <option value="7">7º Ano</option>
+                    <option value="8">8º Ano</option>
+                    <option value="9">9º Ano</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="disciplinas">Disciplinas:</label>
+                <div id="lista-disciplinas" class="checkbox-group">
+                    <!-- Disciplinas serão adicionadas dinamicamente pelo JavaScript -->
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Cadastrar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+
+        <div class="turmas-lista">
+            <h2>Turmas Cadastradas</h2>
+            <table id="tabela-turmas">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Ano Letivo</th>
+                        <th>Turno</th>
+                        <th>Série</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Turmas serão adicionadas dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/turmas.js"></script>
+</body>
+</html>

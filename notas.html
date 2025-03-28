@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar - Lançamento de Notas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro-aluno.html">Alunos</a></li>
+                <li><a href="cadastro-pais.html">Pais</a></li>
+                <li><a href="cadastro-disciplina.html">Disciplinas</a></li>
+                <li><a href="turma.html">Turmas</a></li>
+                <li><a href="notas.html">Notas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Lançamento de Notas</h1>
+        <div class="filtros">
+            <div class="form-group">
+                <label for="turma">Turma:</label>
+                <select id="turma" name="turma" required>
+                    <option value="">Selecione uma turma</option>
+                    <!-- Turmas serão adicionadas dinamicamente pelo JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="disciplina">Disciplina:</label>
+                <select id="disciplina" name="disciplina" required>
+                    <option value="">Selecione uma disciplina</option>
+                    <!-- Disciplinas serão adicionadas dinamicamente pelo JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bimestre">Bimestre:</label>
+                <select id="bimestre" name="bimestre" required>
+                    <option value="1">1º Bimestre</option>
+                    <option value="2">2º Bimestre</option>
+                    <option value="3">3º Bimestre</option>
+                    <option value="4">4º Bimestre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="carregar-alunos" type="button">Carregar Alunos</button>
+            </div>
+        </div>
+
+        <form id="notas-form">
+            <table id="tabela-notas">
+                <thead>
+                    <tr>
+                        <th>Nome do Aluno</th>
+                        <th>Nota</th>
+                        <th>Frequência (%)</th>
+                        <th>Observação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Alunos serão adicionados dinamicamente pelo JavaScript -->
+                </tbody>
+            </table>
+            <div class="form-group">
+                <button type="submit">Salvar Notas</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/notas.js"></script>
+</body>
+</html>
