@@ -2,24 +2,24 @@
 
 #### 📌 Estrutura do Projeto  
 - **Páginas HTML**  
-  - [ ] `index.html` - Página de login  
-  - [ ] `cadastro-aluno.html` - Cadastro de Aluno  
-  - [ ] `cadastro-pais.html` - Cadastro de Pais  
-  - [ ] `cadastro-disciplina.html` - Cadastro de Disciplina  
-  - [ ] `turma.html` - Gerenciamento de Turma  
-  - [ ] `notas.html` - Lançamento de Notas  
+  - [X] `index.html` - Página de login  
+  - [X] `cadastro-aluno.html` - Cadastro de Aluno  
+  - [X] `cadastro-pais.html` - Cadastro de Pais  
+  - [X] `cadastro-disciplina.html` - Cadastro de Disciplina  
+  - [X] `turma.html` - Gerenciamento de Turma  
+  - [X] `notas.html` - Lançamento de Notas  
 
 - **Estilização (CSS)**  
-  - [ ] `css/style.css` - Estilos principais  
-  - [ ] `css/auth.css` - Estilos específicos para autenticação  
+  - [X] `css/style.css` - Estilos principais  
+  - [X] `css/auth.css` - Estilos específicos para autenticação  
 
 - **Lógica (JavaScript)**  
-  - [ ] `js/auth.js` - Lógica de autenticação  
-  - [ ] `js/alunos.js` - Lógica de cadastro de alunos  
-  - [ ] `js/pais.js` - Lógica de cadastro de pais  
-  - [ ] `js/disciplinas.js` - Lógica de cadastro de disciplinas  
-  - [ ] `js/turmas.js` - Lógica de gerenciamento de turmas  
-  - [ ] `js/notas.js` - Lógica de lançamento de notas  
+  - [X] `js/auth.js` - Lógica de autenticação  
+  - [X] `js/alunos.js` - Lógica de cadastro de alunos  
+  - [X] `js/pais.js` - Lógica de cadastro de pais  
+  - [X] `js/disciplinas.js` - Lógica de cadastro de disciplinas  
+  - [X] `js/turmas.js` - Lógica de gerenciamento de turmas  
+  - [X] `js/notas.js` - Lógica de lançamento de notas  
 
 ---
 
